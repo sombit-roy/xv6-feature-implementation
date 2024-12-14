@@ -1,0 +1,38 @@
+Skipping heap region allocation (proc: sh, addr: 5000, npages: 16)
+----------------------------------------
+#PF: Proc (sh), Page (5000)
+----------------------------------------
+#PF: Proc (sh), Page (14000)
+Ondemand process creation (proc: test-pageswap)
+Skipping program section loading (proc: test-pageswap, addr: 0, size: 4096)
+Skipping program section loading (proc: test-pageswap, addr: 1000, size: 32)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (0)
+LOAD: Addr (0), SEG: (1000), SIZE (4096)
+Skipping heap region allocation (proc: test-pageswap, addr: 4000, npages: 101)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (4000)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (5000)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (6000)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (7000)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (8000)
+----------------------------------------
+.
+.
+.
+----------------------------------------
+#PF: Proc (test-pageswap), Page (66000)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (67000)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (68000)
+EVICT: Page (4000) --> PSA (0 - 3)
+----------------------------------------
+#PF: Proc (test-pageswap), Page (4000)
+EVICT: Page (5000) --> PSA (4 - 7)
+RETRIEVE: Page (4000) --> PSA (0 - 3)
+[*] PSWAP TEST PASSED.
